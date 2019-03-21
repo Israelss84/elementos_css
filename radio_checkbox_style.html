@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+		.form-check {
+		    position: relative;
+		    padding: 19px 0 15px 40px;
+		    text-align: left;
+		    overflow: hidden
+		}
+		.form-check label {
+		    cursor: pointer
+		}
+		.form-check label:after,
+		.form-check label:before {
+		    content: '';
+		    position: absolute;
+		    top: 50%;
+		    left: 0;
+		    border-radius: 5px
+		}
+		.form-check label:before {
+		    left: 3px;
+		    width: 22px;
+		    height: 22px;
+		    margin: -10px 0 0;
+		    background: #eceef3
+		}
+		.form-check label:after {
+		    left: 8px;
+		    width: 13px;
+		    height: 13px;
+		    margin: -6px 0 0;
+		    opacity: 0;
+		    background: #8e54e9;
+		    transform: translate3d(0, 0, 0) scale(.5);
+		    transition: opacity .25s ease-in-out, transform .25s ease-in-out
+		}
+		.form-check input[type=checkbox],
+		.form-check input[type=radio] {
+		    position: absolute;
+		    top: 0;
+		    left: -9999px;
+		    visibility: hidden
+		}
+		.form-check input[type=checkbox]:checked+label:after,
+		.form-check input[type=radio]:checked+label:after {
+		    transform: translate3d(0, 0, 0);
+		    opacity: 1
+		}
+		.form-check label:after,
+		.form-check label:before {
+		    border-radius: 0
+		}
+		.form-check label:before {
+		    border-radius: 2px
+		}
+		.form-check label:after {
+		    border-radius: 2px
+		}
+		.form-check input[type=radio]+label:before {
+		    border-radius: 10px
+		}
+		.form-check input[type=radio]+label:after {
+		    border-radius: 10px;
+		    margin: -5px 0 0
+		}
+		.form-check input[type=radio]+label:before {
+		    border-radius: 50px
+		}
+	</style>
+</head>
+<body>
+	<fieldset class="form-group">
+        <div class="row">
+            <div class="col-form-label col-sm-3 pt-3">Radios</div>
+            <div class="col-sm-9">
+                <div class="form-check">
+                    <input class="" type="radio" name="gridRadios" id="gridR" value="option1" checked>
+                    <label class="" for="gridR">
+                        First radio
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <label class="" for="gridRadios2">
+                        Second radio
+                    </label>
+                </div>
+                <div class="form-check disabled">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                    <label class="form-check-label" for="gridRadios3">
+                        Third disabled radio
+                    </label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+		<div class="row">
+            <div class="col-form-label col-sm-3 pt-3">Checkbox</div>
+            <div class="col-sm-9">
+
+                <div class="form-check">
+					<input class="form-check-input" type="checkbox" id="disabledFieldsetCheck">
+                    <label class="form-check-label" for="disabledFieldsetCheck">
+                        Can't check this
+                    </label>
+                </div>
+
+            </div>
+        </div>
+    </fieldset>
+</body>
+</html>
